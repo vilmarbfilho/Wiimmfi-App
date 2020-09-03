@@ -14,6 +14,8 @@ object Libs {
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.1"
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:2.3.0"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:2.3.0"
+
+    const val jsoup = "org.jsoup:jsoup:1.13.1"
 }
 
 object TestLibs {
