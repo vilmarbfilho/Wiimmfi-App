@@ -1,6 +1,6 @@
 package br.com.vlabs.data.models
 
-data class GameScrap(
+data class GameScraped(
     val type: String,
     val name: String,
     val remark: String,

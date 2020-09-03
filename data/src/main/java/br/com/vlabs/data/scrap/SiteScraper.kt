@@ -7,12 +7,12 @@ import br.com.vlabs.data.GameConstants.GAME_TYPE_INDEX
 import br.com.vlabs.data.GameConstants.GAME_VARIANTS_INDEX
 import br.com.vlabs.data.GameConstants.HEADER_GAME_INFO_INDEX
 import br.com.vlabs.data.GameConstants.HEADER_TABLE_INDEX
-import br.com.vlabs.data.models.GameScrap
+import br.com.vlabs.data.models.GameScraped
 import org.jsoup.Jsoup
 
 object SiteScraper {
 
-    fun getGameStats(): List<GameScrap> {
+    fun getGameStats(): List<GameScraped> {
         val html = Jsoup.connect(WiimmfiPages.GAME_STATS).get()
         val tableItems = html.select("table#game tbody tr")
 
@@ -29,7 +29,7 @@ object SiteScraper {
             val variants = it.child(GAME_VARIANTS_INDEX).text()
             val online = it.child(GAME_ONLINE_INDEX).text()
 
-            GameScrap(type, name, remark, variants, online)
+            GameScraped(type, name, remark, variants, online)
         }
 
     }
