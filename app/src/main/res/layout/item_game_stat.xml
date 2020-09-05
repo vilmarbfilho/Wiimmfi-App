@@ -4,18 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="4dp">
+    android:layout_margin="4dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/stroke_color"
+    app:strokeWidth="1dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/ivGameType"
-            android:layout_width="100dp"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/nintendo_ds" />
@@ -29,11 +32,11 @@
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:fontFamily="@font/nintend_bold"
-            android:maxLines="2"
+            android:maxLines="1"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivGameType"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivGameType"
             tools:text="Mario Kart" />
 
         <TextView
@@ -47,7 +50,7 @@
             android:maxLines="3"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivGameType"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvGameName"
             tools:text="Type: DS" />
 
@@ -62,7 +65,7 @@
             android:maxLines="3"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ivGameType"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvGameType"
             tools:text="@tools:sample/lorem/random"
             tools:visibility="visible" />
@@ -76,7 +79,7 @@
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tvGameOnline"
-            app:layout_constraintStart_toEndOf="@id/ivGameType"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvGameRemark"
             app:layout_constraintVertical_bias="0"
             tools:text="Variants: 1" />
