@@ -23,6 +23,17 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/nds" />
 
+        <ImageView
+            android:id="@+id/ivGameTypeGradient"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/gradient_drawable"
+            app:layout_constraintBottom_toBottomOf="@id/ivGameType"
+            app:layout_constraintEnd_toEndOf="@id/ivGameType"
+            app:layout_constraintStart_toStartOf="@id/ivGameType"
+            app:layout_constraintTop_toTopOf="@id/ivGameType" />
+
         <TextView
             android:id="@+id/tvGameName"
             android:layout_width="0dp"
