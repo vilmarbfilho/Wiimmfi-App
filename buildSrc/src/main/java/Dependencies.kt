@@ -20,6 +20,8 @@ object Libs {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
 
+    const val recyclerView = "com.android.support:recyclerview-v7:28.0.0"
+
     const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle_version}"
     const val lifecycleLivedataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle_version}"
 

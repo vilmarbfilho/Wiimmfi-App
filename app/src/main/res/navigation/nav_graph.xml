@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/GameStatsFragment"
         android:name="br.com.vlabs.wiimmfiapp.game.stats.GameStatsFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/game_stat_fragment_label"
         tools:layout="@layout/fragment_game_stats" />
 
 </navigation>

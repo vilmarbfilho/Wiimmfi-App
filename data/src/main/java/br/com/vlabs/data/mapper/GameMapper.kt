@@ -1,12 +1,19 @@
 package br.com.vlabs.data.mapper
 
 import br.com.vlabs.data.models.GameScraped
+import br.com.vlabs.domain.entity.Console
 import br.com.vlabs.domain.entity.Game
 
 fun GameScraped.toGame() = Game(
-        this.type,
+        toConsole(this.type),
         this.name,
         this.remark,
         this.variants,
         this.online
 )
+
+fun toConsole(type: String) = when (type.toLowerCase()) {
+        "wii" -> Console.WII(type)
+        "nds" -> Console.NDS(type)
+        else -> Console.UNKNOWN
+}

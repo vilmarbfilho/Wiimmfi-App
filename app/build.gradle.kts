@@ -51,6 +51,7 @@ dependencies {
     implementation(Libs.constraintLayout)
     implementation(Libs.navigationFragment)
     implementation(Libs.navigationUi)
+    implementation(Libs.recyclerView)
 
     implementation(Libs.koinCore)
     implementation(Libs.koinExt)
