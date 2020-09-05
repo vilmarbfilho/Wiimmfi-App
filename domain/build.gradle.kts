@@ -26,6 +26,7 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(Libs.kotlin)
     implementation(Libs.coreKtx)
+    implementation(Libs.coroutines)
 
     testImplementation(TestLibs.junit)
 

@@ -24,6 +24,9 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
+    implementation(project(":domain"))
+
     implementation(Libs.kotlin)
     implementation(Libs.coreKtx)
     implementation(Libs.jsoup)
