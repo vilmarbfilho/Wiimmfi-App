@@ -1,4 +1,7 @@
 package br.com.vlabs.wiimmfiapp.game.stats
 
-class GameStatsViewModel {
+import androidx.lifecycle.ViewModel
+
+class GameStatsViewModel : ViewModel() {
+
 }
