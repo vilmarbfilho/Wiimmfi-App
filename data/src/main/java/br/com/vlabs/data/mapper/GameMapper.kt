@@ -15,5 +15,6 @@ fun GameScraped.toGame() = Game(
 fun toConsole(type: String) = when (type.toLowerCase()) {
         "wii" -> Console.WII(type)
         "nds" -> Console.NDS(type)
+        "wiiware" -> Console.NDS(type)
         else -> Console.UNKNOWN
 }

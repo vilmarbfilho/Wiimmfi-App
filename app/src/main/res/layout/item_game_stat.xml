@@ -17,11 +17,11 @@
             android:id="@+id/ivGameType"
             android:layout_width="0dp"
             android:layout_height="100dp"
-            android:scaleType="centerCrop"
+            android:scaleType="centerInside"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/nintendo_ds" />
+            tools:src="@drawable/nds" />
 
         <TextView
             android:id="@+id/tvGameName"

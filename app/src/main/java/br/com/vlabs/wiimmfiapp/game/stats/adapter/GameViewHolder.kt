@@ -1,7 +1,6 @@
 package br.com.vlabs.wiimmfiapp.game.stats.adapter
 
 import android.view.View
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vlabs.domain.entity.Console
 import br.com.vlabs.domain.entity.Game
@@ -20,8 +19,9 @@ class GameViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         view.tvGameOnline.text = context.getString(R.string.online_label, game.online)
 
         val rscImage = when(game.console) {
-            is Console.NDS -> R.drawable.nintendo_ds
-            is Console.WII -> R.drawable.nintendo_wii
+            is Console.NDS -> R.drawable.nds
+            is Console.WII -> R.drawable.wii
+            is Console.WIIWARE -> R.drawable.wiiware
             else -> 0
         }
 
