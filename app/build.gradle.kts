@@ -42,6 +42,8 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
 
+    implementation(Libs.coroutines)
+
     implementation(Libs.kotlin)
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
@@ -55,6 +57,9 @@ dependencies {
     implementation(Libs.koinScope)
     implementation(Libs.koinViewModel)
     implementation(Libs.koinFragment)
+
+    implementation(Libs.lifecycleViewModel)
+    implementation(Libs.lifecycleLivedataKtx)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.koinTest)
