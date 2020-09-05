@@ -6,6 +6,7 @@ plugins {
 
 android {
     compileSdkVersion(AppConfig.compileSdk)
+
     buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
@@ -37,6 +38,10 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
+    implementation(project(":data"))
+    implementation(project(":domain"))
+
     implementation(Libs.kotlin)
     implementation(Libs.coreKtx)
     implementation(Libs.appcompat)
@@ -45,7 +50,14 @@ dependencies {
     implementation(Libs.navigationFragment)
     implementation(Libs.navigationUi)
 
+    implementation(Libs.koinCore)
+    implementation(Libs.koinExt)
+    implementation(Libs.koinScope)
+    implementation(Libs.koinViewModel)
+    implementation(Libs.koinFragment)
+
     testImplementation(TestLibs.junit)
+    testImplementation(TestLibs.koinTest)
 
     androidTestImplementation(TestLibs.junitExt)
     androidTestImplementation(TestLibs.espressoCore)
