@@ -31,7 +31,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
-            android:fontFamily="@font/nintend_bold"
+            android:fontFamily="@font/nintender"
             android:maxLines="1"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
