@@ -23,7 +23,7 @@ class GameViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
             view.tvGameRemark.visibility = View.VISIBLE
         }
 
-        view.tvGameType.text = context.getString(R.string.type_label, game.console.name)
+        view.tvGameType.text = game.console.name
 
         val rscImage = when(game.console) {
             is Console.NDS -> R.drawable.nds

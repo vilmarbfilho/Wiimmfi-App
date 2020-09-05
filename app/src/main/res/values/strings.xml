@@ -4,7 +4,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="game_stat_fragment_label">Game Stat Fragment</string>
-    <string name="type_label">Type: %s</string>
     <string name="variants_label">Variants: %s</string>
     <string name="online_label">Online: %s</string>
 </resources>
