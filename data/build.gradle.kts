@@ -27,6 +27,8 @@ dependencies {
 
     implementation(project(":domain"))
 
+    implementation(Libs.coroutines)
+
     implementation(Libs.kotlin)
     implementation(Libs.coreKtx)
     implementation(Libs.jsoup)
