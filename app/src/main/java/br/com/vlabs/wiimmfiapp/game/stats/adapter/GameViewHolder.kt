@@ -13,10 +13,17 @@ class GameViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val context = view.context
 
         view.tvGameName.text = game.name
-        view.tvGameType.text = context.getString(R.string.type_label, game.console.name)
-        view.tvGameRemark.text = game.remark
         view.tvGameVariants.text = context.getString(R.string.variants_label, game.variants)
         view.tvGameOnline.text = context.getString(R.string.online_label, game.online)
+
+        if (game.remark.isEmpty()) {
+            view.tvGameRemark.visibility = View.GONE
+        } else {
+            view.tvGameRemark.text = game.remark
+            view.tvGameRemark.visibility = View.VISIBLE
+        }
+
+        view.tvGameType.text = context.getString(R.string.type_label, game.console.name)
 
         val rscImage = when(game.console) {
             is Console.NDS -> R.drawable.nds
