@@ -1,9 +1,10 @@
 object Versions {
-    const val gradle = "4.0.1"
-    const val kotlin = "1.4.0"
     const val appcompat = "1.2.0"
+    const val gradle = "4.0.1"
     const val junit = "4.12"
+    const val kotlin = "1.4.0"
     const val koin_version = "2.1.6"
+    const val nav_version = "2.3.0"
 }
 
 object Libs {
@@ -15,8 +16,8 @@ object Libs {
     const val coreKtx = "androidx.core:core-ktx:1.3.1"
     const val material = "com.google.android.material:material:1.2.0"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.1"
-    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:2.3.0"
-    const val navigationUi = "androidx.navigation:navigation-ui-ktx:2.3.0"
+    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
 
     const val jsoup = "org.jsoup:jsoup:1.13.1"
 
