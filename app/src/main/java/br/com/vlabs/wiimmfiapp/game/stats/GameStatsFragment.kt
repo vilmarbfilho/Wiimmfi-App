@@ -6,15 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import br.com.vlabs.wiimmfiapp.R
 import br.com.vlabs.wiimmfiapp.common.setToolbar
 import br.com.vlabs.wiimmfiapp.game.stats.adapter.GameStatsAdapter
 import kotlinx.android.synthetic.main.fragment_game_stats.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class GameStatsFragment : Fragment() {
 
-    private val viewModel: GameStatsViewModel by viewModel()
+    private val navController by lazy { findNavController() }
+
+    private val viewModel: GameStatsViewModel by viewModel { parametersOf(navController) }
 
     private val gameAdapter = GameStatsAdapter()
 
