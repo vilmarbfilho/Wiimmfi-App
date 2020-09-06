@@ -3,14 +3,14 @@ package br.com.vlabs.wiimmfiapp.game.stats.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.vlabs.domain.entity.Game
 import br.com.vlabs.wiimmfiapp.R
+import br.com.vlabs.wiimmfiapp.model.GameModel
 
 class GameStatsAdapter(
-    private val onClickItem: (Game) -> Unit
+    private val onClickItem: (GameModel) -> Unit
 ) : RecyclerView.Adapter<GameViewHolder>() {
 
-    private val dataSet = mutableListOf<Game>()
+    private val dataSet = mutableListOf<GameModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         GameViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_game_stat, parent, false))
@@ -23,7 +23,7 @@ class GameStatsAdapter(
 
     override fun getItemCount() = dataSet.size
 
-    fun updateDataSet(data: List<Game>) {
+    fun updateDataSet(data: List<GameModel>) {
         dataSet.clear()
         dataSet.addAll(data)
         notifyDataSetChanged()

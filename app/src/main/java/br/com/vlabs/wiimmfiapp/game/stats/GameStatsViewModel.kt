@@ -3,8 +3,9 @@ package br.com.vlabs.wiimmfiapp.game.stats
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.vlabs.domain.entity.Game
 import br.com.vlabs.domain.repository.GameRepository
+import br.com.vlabs.wiimmfiapp.model.GameModel
+import br.com.vlabs.wiimmfiapp.model.mapper.toGameModel
 import br.com.vlabs.wiimmfiapp.router.GameRouter
 import kotlinx.coroutines.launch
 
@@ -14,19 +15,19 @@ class GameStatsViewModel(
 ) : ViewModel() {
 
     val loading = MutableLiveData(false)
-    val gameStats: MutableLiveData<List<Game>> = MutableLiveData()
+    val gameStats: MutableLiveData<List<GameModel>> = MutableLiveData()
 
     fun getGamesStats() {
         viewModelScope.launch {
             loading.value = true
 
-            gameStats.value = repository.getStats()
+            gameStats.value = repository.getStats().map { it.toGameModel() }
 
             loading.value = false
         }
     }
 
-    fun onGameClicked(game: Game) {
+    fun onGameClicked(game: GameModel) {
         router.toGameDetails(game)
     }
 }
