@@ -9,5 +9,6 @@ class GameModel (
     val name: String,
     val remark: String,
     val variants: String,
-    val online: String
+    val online: String,
+    val urlDetails: String
 ) : Parcelable

@@ -8,5 +8,6 @@ fun GameScraped.toGame() = Game(
         this.name,
         this.remark,
         this.variants,
-        this.online
+        this.online,
+        this.urlDetails
 )
