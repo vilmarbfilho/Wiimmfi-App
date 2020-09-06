@@ -9,6 +9,15 @@
         android:id="@+id/GameStatsFragment"
         android:name="br.com.vlabs.wiimmfiapp.game.stats.GameStatsFragment"
         android:label="@string/game_stat_fragment_label"
-        tools:layout="@layout/fragment_game_stats" />
+        tools:layout="@layout/fragment_game_stats">
+        <action
+            android:id="@+id/action_GameStatsFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetailFragment"
+        android:name="br.com.vlabs.wiimmfiapp.game.detail.GameDetailFragment"
+        android:label="GameDetailFragment"
+        tools:layout="@layout/fragment_game_detail" />
 
 </navigation>
