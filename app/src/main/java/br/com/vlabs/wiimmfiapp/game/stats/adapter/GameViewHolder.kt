@@ -9,8 +9,10 @@ import kotlinx.android.synthetic.main.item_game_stat.view.*
 
 class GameViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
 
-    fun bind(game: Game) {
+    fun bind(game: Game, onClick: (Game) -> Unit) {
         val context = view.context
+
+        view.cvContainer.setOnClickListener { onClick(game) }
 
         view.tvGameName.text = game.name
         view.tvGameVariants.text = context.getString(R.string.variants_label, game.variants)

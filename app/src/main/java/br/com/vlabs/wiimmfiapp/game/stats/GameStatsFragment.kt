@@ -54,6 +54,10 @@ class GameStatsFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
+        gameAdapter.onGameClicked {
+            viewModel.onGameClicked(it)
+        }
+
         with(rvGameStats) {
             setHasFixedSize(true)
             adapter = gameAdapter
