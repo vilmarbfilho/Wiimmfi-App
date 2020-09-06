@@ -11,11 +11,16 @@ class GameStatsViewModel(
     private val repository: GameRepository
 ) : ViewModel() {
 
+    val loading = MutableLiveData(false)
     val gameStats: MutableLiveData<List<Game>> = MutableLiveData()
 
     fun getGamesStats() {
         viewModelScope.launch {
+            loading.value = true
+
             gameStats.value = repository.getStats()
+
+            loading.value = false
         }
     }
 }
