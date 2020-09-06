@@ -18,6 +18,10 @@
         android:id="@+id/gameDetailFragment"
         android:name="br.com.vlabs.wiimmfiapp.game.detail.GameDetailFragment"
         android:label="GameDetailFragment"
-        tools:layout="@layout/fragment_game_detail" />
+        tools:layout="@layout/fragment_game_detail" >
+        <argument
+            android:name="gameModel"
+            app:argType="br.com.vlabs.wiimmfiapp.model.GameModel" />
+    </fragment>
 
 </navigation>

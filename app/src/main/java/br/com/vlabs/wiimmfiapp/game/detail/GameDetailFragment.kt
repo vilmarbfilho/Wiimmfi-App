@@ -5,15 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import br.com.vlabs.wiimmfiapp.R
 import br.com.vlabs.wiimmfiapp.common.getActionBar
 import br.com.vlabs.wiimmfiapp.common.setToolbar
-import kotlinx.android.synthetic.main.fragment_game_stats.*
+import br.com.vlabs.wiimmfiapp.model.toImageResource
+import kotlinx.android.synthetic.main.fragment_game_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.parameter.parametersOf
 
 class GameDetailFragment : Fragment() {
 
-    private val viewModel: GameDetailViewModel by viewModel()
+    private val args: GameDetailFragmentArgs by navArgs()
+
+    private val viewModel: GameDetailViewModel by viewModel { parametersOf(args) }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +49,29 @@ class GameDetailFragment : Fragment() {
     }
 
     private fun observeLiveData() {
+        viewModel.gameConsole.observe(viewLifecycleOwner, {
+            ivGameType.setImageResource(it.toImageResource())
+        })
 
+        viewModel.gameName.observe(viewLifecycleOwner, {
+            tvGameName.text = it
+        })
+
+        viewModel.gameRemark.observe(viewLifecycleOwner, {
+            if (it.isEmpty()) {
+                tvGameRemark.visibility = View.GONE
+            } else {
+                tvGameRemark.text = it
+                tvGameRemark.visibility = View.VISIBLE
+            }
+        })
+
+        viewModel.gameVariants.observe(viewLifecycleOwner, {
+            tvGameVariants.text = getString(R.string.variants_label, it)
+        })
+
+        viewModel.gameOnline.observe(viewLifecycleOwner, {
+            tvGameOnline.text = getString(R.string.online_label, it)
+        })
     }
 }
