@@ -46,7 +46,7 @@
         android:layout_marginEnd="8dp"
         android:ellipsize="end"
         android:fontFamily="@font/nintender"
-        android:maxLines="1"
+        android:maxLines="3"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,7 +55,7 @@
         tools:text="Mario Kart" />
 
     <TextView
-        android:id="@+id/tvGameType"
+        android:id="@+id/tvGameConsole"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -80,12 +80,12 @@
         android:layout_marginEnd="8dp"
         android:ellipsize="end"
         android:fontFamily="@font/montserrat_regular"
-        android:maxLines="3"
+        android:maxLines="5"
         android:textColor="@android:color/black"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvGameType"
+        app:layout_constraintTop_toBottomOf="@id/tvGameConsole"
         tools:text="@tools:sample/lorem/random"
         tools:visibility="visible" />
 

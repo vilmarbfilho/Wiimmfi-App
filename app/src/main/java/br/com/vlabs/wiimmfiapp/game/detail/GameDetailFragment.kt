@@ -50,6 +50,7 @@ class GameDetailFragment : Fragment() {
 
     private fun observeLiveData() {
         viewModel.gameConsole.observe(viewLifecycleOwner, {
+            tvGameConsole.text = getString(R.string.console_label, it.name)
             ivGameType.setImageResource(it.toImageResource())
         })
 
