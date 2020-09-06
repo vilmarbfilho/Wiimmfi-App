@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.vlabs.wiimmfiapp.R
@@ -33,7 +32,7 @@ class GameStatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setToolbar(toolbar as Toolbar, getString(R.string.toolbar_label))
+        setToolbar(toolbar, getString(R.string.toolbar_label))
 
         setupRecyclerView()
 

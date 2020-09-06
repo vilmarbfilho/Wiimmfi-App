@@ -14,7 +14,7 @@ fun Fragment.setToolbar(toolbar: Toolbar?, title: String? = null) {
     }
 }
 
-fun Fragment.getToolbar() = if (activity is AppCompatActivity) {
+fun Fragment.getActionBar() = if (activity is AppCompatActivity) {
     (activity as AppCompatActivity).supportActionBar
 } else {
     null
