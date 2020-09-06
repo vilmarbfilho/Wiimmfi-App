@@ -20,7 +20,9 @@ class GameStatsFragment : Fragment() {
 
     private val viewModel: GameStatsViewModel by viewModel { parametersOf(navController) }
 
-    private val gameAdapter = GameStatsAdapter()
+    private val gameAdapter = GameStatsAdapter {
+        viewModel.onGameClicked(it)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,10 +60,6 @@ class GameStatsFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        gameAdapter.onGameClicked {
-            viewModel.onGameClicked(it)
-        }
-
         with(rvGameStats) {
             setHasFixedSize(true)
             adapter = gameAdapter
