@@ -9,8 +9,10 @@ import androidx.navigation.fragment.navArgs
 import br.com.vlabs.wiimmfiapp.R
 import br.com.vlabs.wiimmfiapp.common.getActionBar
 import br.com.vlabs.wiimmfiapp.common.setToolbar
+import br.com.vlabs.wiimmfiapp.game.detail.adapter.OnlineUserAdapter
 import br.com.vlabs.wiimmfiapp.model.toImageResource
 import kotlinx.android.synthetic.main.fragment_game_detail.*
+import kotlinx.android.synthetic.main.fragment_game_detail.toolbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -19,6 +21,8 @@ class GameDetailFragment : Fragment() {
     private val args: GameDetailFragmentArgs by navArgs()
 
     private val viewModel: GameDetailViewModel by viewModel { parametersOf(args) }
+
+    private val onlineUserAdapter = OnlineUserAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,6 +34,8 @@ class GameDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupToolbar()
+
+        setupRecyclerView()
 
         viewModel.loadOnlineUsers()
 
@@ -47,6 +53,13 @@ class GameDetailFragment : Fragment() {
 
         toolbar.setNavigationOnClickListener {
             requireActivity().onBackPressed()
+        }
+    }
+
+    private fun setupRecyclerView() {
+        with(rvOnlineUsers) {
+            setHasFixedSize(true)
+            adapter = onlineUserAdapter
         }
     }
 
@@ -75,6 +88,10 @@ class GameDetailFragment : Fragment() {
 
         viewModel.gameOnline.observe(viewLifecycleOwner, {
             tvGameOnline.text = getString(R.string.online_label, it)
+        })
+
+        viewModel.onlineUsers.observe(viewLifecycleOwner, {
+            onlineUserAdapter.updateDataSet(it)
         })
     }
 }
