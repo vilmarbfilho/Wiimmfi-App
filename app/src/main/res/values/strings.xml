@@ -8,4 +8,8 @@
     <string name="console_label">Console: %s</string>
     <string name="variants_label">Variants: %s</string>
     <string name="online_label">Online: %s</string>
+
+    <string name="friend_code_label">Friend Code</string>
+    <string name="status_label">Status</string>
+    <string name="name_label">Name</string>
 </resources>

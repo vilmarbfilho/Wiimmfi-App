@@ -9,7 +9,8 @@ fun Game.toGameModel() = GameModel(
     this.name,
     this.remark,
     this.variants,
-    this.online
+    this.online,
+    this.id
 )
 
 fun toConsoleModel(type: String) = when (type.toLowerCase()) {

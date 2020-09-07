@@ -16,6 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:indeterminate="true"
+        android:scaleY="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
     <ImageView
         android:id="@+id/ivGameType"
         android:layout_width="0dp"
@@ -23,7 +34,7 @@
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/pbLoading"
         tools:src="@drawable/nds" />
 
     <ImageView
@@ -121,5 +132,54 @@
         app:layout_constraintTop_toBottomOf="@id/tvGameRemark"
         app:layout_constraintVertical_bias="0"
         tools:text="Online: 5" />
+
+    <TextView
+        android:id="@+id/tvColumnFriendCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/header_background"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/friend_code_label"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@id/tvColumnStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGameVariants" />
+
+    <TextView
+        android:id="@+id/tvColumnStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_background"
+        android:ellipsize="end"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/status_label"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@id/tvColumnUserName"
+        app:layout_constraintStart_toEndOf="@id/tvColumnFriendCode"
+        app:layout_constraintTop_toTopOf="@id/tvColumnFriendCode" />
+
+    <TextView
+        android:id="@+id/tvColumnUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/header_background"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/name_label"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvColumnStatus"
+        app:layout_constraintTop_toTopOf="@id/tvColumnFriendCode" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOnlineUsers"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvColumnFriendCode"
+        tools:listitem="@layout/item_online_user" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

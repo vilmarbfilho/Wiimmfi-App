@@ -2,6 +2,8 @@ package br.com.vlabs.data.scrap
 
 object WiimmfiPages {
 
-    val GAME_STATS = "https://wiimmfi.de/game"
+    val URL_BASE_SITE = "https://wiimmfi.de"
+
+    val PATH_GAME_STATS = "/game"
 
 }
