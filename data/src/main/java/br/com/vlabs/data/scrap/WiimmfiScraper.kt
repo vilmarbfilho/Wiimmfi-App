@@ -30,9 +30,11 @@ object WiimmfiScraper {
             val remark = it.child(GAME_REMARK_INDEX).text()
             val variants = it.child(GAME_VARIANTS_INDEX).text()
             val online = it.child(GAME_ONLINE_INDEX).text()
-            val hrefDetails = it.child(GAME_NAME_INDEX).selectFirst("a").attr("href")
 
-            GameScraped(type, name, remark, variants, online, hrefDetails)
+            val href = it.child(GAME_NAME_INDEX).selectFirst("a").attr("href")
+            val id = href.split("/").last()
+
+            GameScraped(id, type, name, remark, variants, online)
         }
 
     }
