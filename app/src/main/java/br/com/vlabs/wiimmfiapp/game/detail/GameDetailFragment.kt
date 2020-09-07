@@ -14,7 +14,6 @@ import br.com.vlabs.wiimmfiapp.model.toImageResource
 import kotlinx.android.synthetic.main.fragment_game_detail.*
 import kotlinx.android.synthetic.main.fragment_game_detail.pbLoading
 import kotlinx.android.synthetic.main.fragment_game_detail.toolbar
-import kotlinx.android.synthetic.main.fragment_game_stats.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -66,6 +65,10 @@ class GameDetailFragment : Fragment() {
     }
 
     private fun observeLiveData() {
+        viewModel.showError.observe(viewLifecycleOwner, { show ->
+
+        })
+
         viewModel.loading.observe(viewLifecycleOwner, { show ->
             pbLoading.visibility = if (show) {
                 View.VISIBLE

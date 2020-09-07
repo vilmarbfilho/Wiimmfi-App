@@ -8,6 +8,7 @@ import br.com.vlabs.wiimmfiapp.model.GameModel
 import br.com.vlabs.wiimmfiapp.model.mapper.toGameModel
 import br.com.vlabs.wiimmfiapp.router.GameRouter
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 class GameStatsViewModel(
     private val repository: GameRepository,
@@ -17,11 +18,18 @@ class GameStatsViewModel(
     val loading = MutableLiveData(false)
     val gameStats: MutableLiveData<List<GameModel>> = MutableLiveData()
 
+    val showError = MutableLiveData(false)
+
     fun getGamesStats() {
         viewModelScope.launch {
             loading.value = true
+            showError.value = false
 
-            gameStats.value = repository.getStats().map { it.toGameModel() }
+            try {
+                gameStats.value = repository.getStats().map { it.toGameModel() }
+            } catch (exception: IOException) {
+                showError.value = true
+            }
 
             loading.value = false
         }

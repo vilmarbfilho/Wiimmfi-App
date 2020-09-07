@@ -38,4 +38,6 @@
         app:layout_constraintTop_toBottomOf="@id/pbLoading"
         tools:listitem="@layout/item_game_stat" />
 
+    <include layout="@layout/error_game_stat" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
