@@ -12,4 +12,9 @@
     <string name="friend_code_label">Friend Code</string>
     <string name="status_label">Status</string>
     <string name="name_label">Name</string>
+
+    <string name="try_again">Try Again</string>
+    <string name="game_over">Game Over</string>
+    <string name="error_message_generic">Unable to load the information.</string>
+
 </resources>

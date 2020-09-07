@@ -9,7 +9,9 @@ import androidx.navigation.fragment.findNavController
 import br.com.vlabs.wiimmfiapp.R
 import br.com.vlabs.wiimmfiapp.common.setToolbar
 import br.com.vlabs.wiimmfiapp.game.stats.adapter.GameStatsAdapter
+import kotlinx.android.synthetic.main.error_game_stat.*
 import kotlinx.android.synthetic.main.fragment_game_stats.*
+import kotlinx.android.synthetic.main.fragment_game_stats.pbLoading
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -36,6 +38,8 @@ class GameStatsFragment : Fragment() {
 
         setupRecyclerView()
 
+        setupListener()
+
         observeLiveData()
     }
 
@@ -44,7 +48,26 @@ class GameStatsFragment : Fragment() {
         viewModel.getGamesStats()
     }
 
+    private fun setupRecyclerView() {
+        with(rvGameStats) {
+            setHasFixedSize(true)
+            adapter = gameAdapter
+        }
+    }
+
+    private fun setupListener() {
+        btnTryAgain.setOnClickListener { viewModel.getGamesStats() }
+    }
+
     private fun observeLiveData() {
+        viewModel.showError.observe(viewLifecycleOwner, { show ->
+            clErrorGenericContainer.visibility = if (show) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+        })
+
         viewModel.loading.observe(viewLifecycleOwner, { show ->
             pbLoading.visibility = if (show) {
                 View.VISIBLE
@@ -56,12 +79,5 @@ class GameStatsFragment : Fragment() {
         viewModel.gameStats.observe(viewLifecycleOwner, {
             gameAdapter.updateDataSet(it)
         })
-    }
-
-    private fun setupRecyclerView() {
-        with(rvGameStats) {
-            setHasFixedSize(true)
-            adapter = gameAdapter
-        }
     }
 }
