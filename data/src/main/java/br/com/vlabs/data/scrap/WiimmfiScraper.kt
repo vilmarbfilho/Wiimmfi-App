@@ -7,7 +7,20 @@ import br.com.vlabs.data.GameConstants.GAME_TYPE_INDEX
 import br.com.vlabs.data.GameConstants.GAME_VARIANTS_INDEX
 import br.com.vlabs.data.GameConstants.HEADER_GAME_INFO_INDEX
 import br.com.vlabs.data.GameConstants.HEADER_TABLE_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_FRIEND_CODE_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_GID_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_HOST_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_ID4_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_LS_STAT_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_NAME1_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_NAME2_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_N_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_OL_STAT_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_PID_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_STATUS_INDEX
+import br.com.vlabs.data.GameConstants.ONLINE_USER_SUSPEND_INDEX
 import br.com.vlabs.data.models.GameScraped
+import br.com.vlabs.data.models.OnlineUserScraped
 import br.com.vlabs.data.scrap.WiimmfiPages.URL_BASE_SITE
 import br.com.vlabs.data.scrap.WiimmfiPages.PATH_GAME_STATS
 import org.jsoup.Jsoup
@@ -36,6 +49,44 @@ object WiimmfiScraper {
 
             GameScraped(id, type, name, remark, variants, online)
         }
+    }
 
+    fun getOnlineUsers(id: String): List<OnlineUserScraped> {
+        val html = Jsoup.connect("$URL_BASE_SITE$PATH_GAME_STATS/$id").get()
+        val tableItems = html.select("table#online tbody tr")
+
+        val onlineUsersList = tableItems.filterIndexed { index, _ ->
+            index > HEADER_TABLE_INDEX
+        }
+
+        return onlineUsersList.map {
+            val id4 = it.child(ONLINE_USER_ID4_INDEX).text()
+            val pid = it.child(ONLINE_USER_PID_INDEX).text()
+            val friendCode = it.child(ONLINE_USER_FRIEND_CODE_INDEX).text()
+            val host = it.child(ONLINE_USER_HOST_INDEX).text()
+            val gid = it.child(ONLINE_USER_GID_INDEX).text()
+            val lsStat = it.child(ONLINE_USER_LS_STAT_INDEX).text()
+            val olStat = it.child(ONLINE_USER_OL_STAT_INDEX).text()
+            val status = it.child(ONLINE_USER_STATUS_INDEX).text()
+            val suspend = it.child(ONLINE_USER_SUSPEND_INDEX).text()
+            val n = it.child(ONLINE_USER_N_INDEX).text()
+            val name1 = it.child(ONLINE_USER_NAME1_INDEX).text()
+            val name2 = it.child(ONLINE_USER_NAME2_INDEX).text()
+
+            OnlineUserScraped(
+                id4,
+                pid,
+                friendCode,
+                host,
+                gid,
+                lsStat,
+                olStat,
+                status,
+                suspend,
+                n,
+                name1,
+                name2
+            )
+        }
     }
 }
