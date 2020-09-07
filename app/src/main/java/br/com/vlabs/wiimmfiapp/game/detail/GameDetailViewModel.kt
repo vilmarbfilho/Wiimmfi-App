@@ -5,13 +5,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.vlabs.domain.repository.GameRepository
 import br.com.vlabs.wiimmfiapp.model.OnlineUserModel
+import br.com.vlabs.wiimmfiapp.model.mapper.toGameModel
 import br.com.vlabs.wiimmfiapp.model.mapper.toOnlineUserModel
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 class GameDetailViewModel(
     private val args: GameDetailFragmentArgs,
     private val repository: GameRepository
 ) : ViewModel() {
+
+    val showError = MutableLiveData(false)
 
     val loading = MutableLiveData(false)
     val onlineUsers: MutableLiveData<List<OnlineUserModel>> = MutableLiveData()
@@ -25,8 +29,13 @@ class GameDetailViewModel(
     fun loadOnlineUsers() {
         viewModelScope.launch {
             loading.value = true
+            showError.value = false
 
-            onlineUsers.value = repository.getOnlineUsers(args.gameModel.id).map { it.toOnlineUserModel() }
+            try {
+                onlineUsers.value = repository.getOnlineUsers(args.gameModel.id).map { it.toOnlineUserModel() }
+            } catch (exception: IOException) {
+                showError.value = true
+            }
 
             loading.value = false
         }
