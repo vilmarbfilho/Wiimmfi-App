@@ -21,7 +21,7 @@ val routerModule = module {
 
 val viewModelModule = module {
     viewModel { (args: GameDetailFragmentArgs) ->
-        GameDetailViewModel(args)
+        GameDetailViewModel(args, get())
     }
     viewModel { (navController: NavController) ->
         GameStatsViewModel(get(), get { parametersOf(navController)})

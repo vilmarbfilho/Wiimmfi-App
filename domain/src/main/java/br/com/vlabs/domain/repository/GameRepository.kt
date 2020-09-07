@@ -7,6 +7,6 @@ interface GameRepository {
 
     suspend fun getStats() : List<Game>
 
-    suspend fun getOnlineUsers() : List<OnlineUser>
+    suspend fun getOnlineUsers(id: String) : List<OnlineUser>
 
 }

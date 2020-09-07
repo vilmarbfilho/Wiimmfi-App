@@ -31,6 +31,8 @@ class GameDetailFragment : Fragment() {
 
         setupToolbar()
 
+        viewModel.loadOnlineUsers()
+
         observeLiveData()
     }
 

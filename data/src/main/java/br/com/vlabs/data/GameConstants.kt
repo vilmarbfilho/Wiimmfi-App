@@ -4,6 +4,7 @@ object GameConstants {
 
     const val HEADER_TABLE_INDEX = 0
     const val HEADER_GAME_INFO_INDEX = 1
+    const val HEADER_USER_ONLINE_INFO_INDEX = 1
 
     // Index Info Games
     const val GAME_TYPE_INDEX = 0

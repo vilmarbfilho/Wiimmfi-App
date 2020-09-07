@@ -7,6 +7,7 @@ import br.com.vlabs.data.GameConstants.GAME_TYPE_INDEX
 import br.com.vlabs.data.GameConstants.GAME_VARIANTS_INDEX
 import br.com.vlabs.data.GameConstants.HEADER_GAME_INFO_INDEX
 import br.com.vlabs.data.GameConstants.HEADER_TABLE_INDEX
+import br.com.vlabs.data.GameConstants.HEADER_USER_ONLINE_INFO_INDEX
 import br.com.vlabs.data.GameConstants.ONLINE_USER_FRIEND_CODE_INDEX
 import br.com.vlabs.data.GameConstants.ONLINE_USER_GID_INDEX
 import br.com.vlabs.data.GameConstants.ONLINE_USER_HOST_INDEX
@@ -57,6 +58,7 @@ object WiimmfiScraper {
 
         val onlineUsersList = tableItems.filterIndexed { index, _ ->
             index > HEADER_TABLE_INDEX
+                    && index > HEADER_USER_ONLINE_INFO_INDEX
         }
 
         return onlineUsersList.map {
