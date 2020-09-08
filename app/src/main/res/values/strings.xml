@@ -9,9 +9,11 @@
     <string name="variants_label">Variants: %s</string>
     <string name="online_label">Online: %s</string>
 
-    <string name="friend_code_label">Friend Code</string>
-    <string name="status_label">Status</string>
-    <string name="name_label">Name</string>
+    <string name="online_users_label">Online Users</string>
+
+    <string name="friend_code_label">Friend Code:</string>
+    <string name="status_label">Status:</string>
+    <string name="name_label">Name:</string>
 
     <string name="try_again">Try Again</string>
     <string name="game_over">Game Over</string>

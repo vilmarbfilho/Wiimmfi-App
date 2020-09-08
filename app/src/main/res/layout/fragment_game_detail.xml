@@ -137,39 +137,13 @@
         android:id="@+id/tvColumnFriendCode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/header_background"
-        android:fontFamily="@font/montserrat_regular"
-        android:text="@string/friend_code_label"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toStartOf="@id/tvColumnStatus"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/online_users_label"
+        android:textColor="@android:color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvGameVariants" />
-
-    <TextView
-        android:id="@+id/tvColumnStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/header_background"
-        android:ellipsize="end"
-        android:fontFamily="@font/montserrat_regular"
-        android:text="@string/status_label"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toStartOf="@id/tvColumnUserName"
-        app:layout_constraintStart_toEndOf="@id/tvColumnFriendCode"
-        app:layout_constraintTop_toTopOf="@id/tvColumnFriendCode" />
-
-    <TextView
-        android:id="@+id/tvColumnUserName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/header_background"
-        android:fontFamily="@font/montserrat_regular"
-        android:text="@string/name_label"
-        android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tvColumnStatus"
-        app:layout_constraintTop_toTopOf="@id/tvColumnFriendCode" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOnlineUsers"
