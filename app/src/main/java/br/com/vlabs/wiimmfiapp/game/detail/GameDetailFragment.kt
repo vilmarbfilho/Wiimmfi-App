@@ -12,8 +12,6 @@ import br.com.vlabs.wiimmfiapp.common.setToolbar
 import br.com.vlabs.wiimmfiapp.game.detail.adapter.OnlineUserAdapter
 import br.com.vlabs.wiimmfiapp.model.toImageResource
 import kotlinx.android.synthetic.main.fragment_game_detail.*
-import kotlinx.android.synthetic.main.fragment_game_detail.pbLoading
-import kotlinx.android.synthetic.main.fragment_game_detail.toolbar
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -77,7 +75,11 @@ class GameDetailFragment : Fragment() {
             }
         })
 
-        viewModel.gameConsole.observe(viewLifecycleOwner, {
+        viewModel.gameModel.observe(viewLifecycleOwner, {
+            onlineUserAdapter.setHeader(it)
+        })
+
+        /*viewModel.gameConsole.observe(viewLifecycleOwner, {
             tvGameConsole.text = getString(R.string.console_label, it.name)
             ivGameType.setImageResource(it.toImageResource())
         })
@@ -101,7 +103,7 @@ class GameDetailFragment : Fragment() {
 
         viewModel.gameOnline.observe(viewLifecycleOwner, {
             tvGameOnline.text = getString(R.string.online_label, it)
-        })
+        })*/
 
         viewModel.onlineUsers.observe(viewLifecycleOwner, {
             onlineUserAdapter.updateDataSet(it)
