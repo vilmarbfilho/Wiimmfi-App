@@ -75,11 +75,7 @@ class GameDetailFragment : Fragment() {
             }
         })
 
-        viewModel.gameModel.observe(viewLifecycleOwner, {
-            onlineUserAdapter.setHeader(it)
-        })
-
-        /*viewModel.gameConsole.observe(viewLifecycleOwner, {
+        viewModel.gameConsole.observe(viewLifecycleOwner, {
             tvGameConsole.text = getString(R.string.console_label, it.name)
             ivGameType.setImageResource(it.toImageResource())
         })
@@ -103,7 +99,7 @@ class GameDetailFragment : Fragment() {
 
         viewModel.gameOnline.observe(viewLifecycleOwner, {
             tvGameOnline.text = getString(R.string.online_label, it)
-        })*/
+        })
 
         viewModel.onlineUsers.observe(viewLifecycleOwner, {
             onlineUserAdapter.updateDataSet(it)
