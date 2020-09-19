@@ -14,7 +14,7 @@ class OnlineUserAdapter: RecyclerView.Adapter<OnlineUserViewHolder>()  {
         OnlineUserViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_online_user, parent, false))
 
     override fun onBindViewHolder(holder: OnlineUserViewHolder, position: Int) {
-       holder.bind(dataSet[position])
+        holder.bind(dataSet[position])
     }
 
     override fun getItemCount() = dataSet.size

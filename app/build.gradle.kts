@@ -50,6 +50,7 @@ dependencies {
     implementation(Libs.appcompat)
     implementation(Libs.material)
     implementation(Libs.constraintLayout)
+    implementation(Libs.coordinatorLayout)
     implementation(Libs.navigationFragment)
     implementation(Libs.navigationUi)
     implementation(Libs.recyclerView)

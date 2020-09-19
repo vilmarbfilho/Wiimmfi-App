@@ -1,4 +1,6 @@
 # Wiimmfi App | Android
+<img src="https://app.bitrise.io/app/8b3c796e5a7698d5/status.svg?token=Jr8pIY4zIfzcSlSc4qpglA&branch=master">
+
 An android app that use the Wiimmfi-Project info. This project is not maintained by Wiimmfi-Project staff.
 
 ### What is Wiimmfi-Project

@@ -20,6 +20,8 @@ class GameDetailViewModel(
     val loading = MutableLiveData(false)
     val onlineUsers: MutableLiveData<List<OnlineUserModel>> = MutableLiveData()
 
+    val gameModel = MutableLiveData(args.gameModel)
+
     val gameConsole = MutableLiveData(args.gameModel.console)
     val gameName = MutableLiveData(args.gameModel.name)
     val gameRemark = MutableLiveData(args.gameModel.remark)

@@ -17,6 +17,7 @@ object Libs {
     const val coreKtx = "androidx.core:core-ktx:1.3.1"
     const val material = "com.google.android.material:material:1.2.0"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.1"
+    const val coordinatorLayout = "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.nav_version}"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.nav_version}"
 
