@@ -3,25 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/GameStatsFragment">
+    app:startDestination="@id/gameStats">
 
     <fragment
-        android:id="@+id/GameStatsFragment"
+        android:id="@+id/gameStats"
         android:name="br.com.vlabs.wiimmfiapp.game.stats.GameStatsFragment"
         android:label="@string/game_stat_fragment_label"
         tools:layout="@layout/fragment_game_stats">
+
         <action
-            android:id="@+id/action_GameStatsFragment_to_gameDetailFragment"
-            app:destination="@id/gameDetailFragment" />
+            android:id="@+id/action_GameStatsFragment_to_gameDetailActivity"
+            app:destination="@id/GameDetailActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/gameDetailFragment"
-        android:name="br.com.vlabs.wiimmfiapp.game.detail.GameDetailFragment"
-        android:label="GameDetailFragment"
-        tools:layout="@layout/fragment_game_detail" >
+
+    <activity
+        android:id="@+id/GameDetailActivity"
+        android:name="br.com.vlabs.wiimmfiapp.game.detail.GameDetailActivity"
+        android:label="GameDetailActivity"
+        tools:layout="@layout/activity_game_detail">
+
         <argument
             android:name="gameModel"
             app:argType="br.com.vlabs.wiimmfiapp.model.GameModel" />
-    </fragment>
+    </activity>
 
 </navigation>

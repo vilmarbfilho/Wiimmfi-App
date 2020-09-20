@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import java.io.IOException
 
 class GameDetailViewModel(
-    private val args: GameDetailFragmentArgs,
+    private val args: GameDetailActivityArgs,
     private val repository: GameRepository
 ) : ViewModel() {
 

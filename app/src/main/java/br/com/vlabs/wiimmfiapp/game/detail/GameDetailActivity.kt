@@ -1,36 +1,28 @@
 package br.com.vlabs.wiimmfiapp.game.detail
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.navArgs
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.navArgs
 import br.com.vlabs.wiimmfiapp.R
-import br.com.vlabs.wiimmfiapp.common.getActionBar
-import br.com.vlabs.wiimmfiapp.common.setToolbar
 import br.com.vlabs.wiimmfiapp.game.detail.adapter.OnlineUserAdapter
 import br.com.vlabs.wiimmfiapp.model.toImageResource
-import kotlinx.android.synthetic.main.fragment_game_detail.*
+import kotlinx.android.synthetic.main.activity_game_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class GameDetailFragment : Fragment() {
+class GameDetailActivity : AppCompatActivity() {
 
-    private val args: GameDetailFragmentArgs by navArgs()
+    private val args: GameDetailActivityArgs by navArgs()
 
     private val viewModel: GameDetailViewModel by viewModel { parametersOf(args) }
 
     private val onlineUserAdapter = OnlineUserAdapter()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ) = inflater.inflate(R.layout.fragment_game_detail, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        setContentView(R.layout.activity_game_detail)
 
         setupToolbar()
 
@@ -42,16 +34,16 @@ class GameDetailFragment : Fragment() {
     }
 
     private fun setupToolbar() {
-        setToolbar(toolbar)
+        setSupportActionBar(toolbar)
 
-        getActionBar()?.let { actionBar ->
+        supportActionBar?.let { actionBar ->
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setDisplayShowHomeEnabled(true)
             actionBar.setDisplayShowTitleEnabled(false)
         }
 
         toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
+            onBackPressed()
         }
     }
 
@@ -63,11 +55,7 @@ class GameDetailFragment : Fragment() {
     }
 
     private fun observeLiveData() {
-        viewModel.showError.observe(viewLifecycleOwner, { show ->
-
-        })
-
-        viewModel.loading.observe(viewLifecycleOwner, { show ->
+        viewModel.loading.observe(this, { show ->
             pbLoading.visibility = if (show) {
                 View.VISIBLE
             } else {
@@ -75,16 +63,16 @@ class GameDetailFragment : Fragment() {
             }
         })
 
-        viewModel.gameConsole.observe(viewLifecycleOwner, {
+        viewModel.gameConsole.observe(this, {
             tvGameConsole.text = getString(R.string.console_label, it.name)
             ivGameType.setImageResource(it.toImageResource())
         })
 
-        viewModel.gameName.observe(viewLifecycleOwner, {
+        viewModel.gameName.observe(this, {
             tvGameName.text = it
         })
 
-        viewModel.gameRemark.observe(viewLifecycleOwner, {
+        viewModel.gameRemark.observe(this, {
             if (it.isEmpty()) {
                 tvGameRemark.visibility = View.GONE
             } else {
@@ -93,15 +81,15 @@ class GameDetailFragment : Fragment() {
             }
         })
 
-        viewModel.gameVariants.observe(viewLifecycleOwner, {
+        viewModel.gameVariants.observe(this, {
             tvGameVariants.text = getString(R.string.variants_label, it)
         })
 
-        viewModel.gameOnline.observe(viewLifecycleOwner, {
+        viewModel.gameOnline.observe(this, {
             tvGameOnline.text = getString(R.string.online_label, it)
         })
 
-        viewModel.onlineUsers.observe(viewLifecycleOwner, {
+        viewModel.onlineUsers.observe(this, {
             onlineUserAdapter.updateDataSet(it)
         })
     }
