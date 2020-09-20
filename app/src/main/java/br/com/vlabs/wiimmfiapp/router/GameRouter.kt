@@ -7,6 +7,6 @@ import br.com.vlabs.wiimmfiapp.model.GameModel
 class GameRouter(private val navController: NavController) {
 
     fun toGameDetails(game: GameModel) {
-        navController.navigate(GameStatsFragmentDirections.actionGameStatsFragmentToGameDetailFragment(game))
+        navController.navigate(GameStatsFragmentDirections.actionGameStatsFragmentToGameDetailActivity(game))
     }
 }
