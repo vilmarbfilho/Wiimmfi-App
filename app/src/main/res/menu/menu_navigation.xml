@@ -3,13 +3,8 @@
     tools:context="br.com.vlabs.wiimmfiapp.MainActivity">
 
     <item
-        android:id="@+id/action_game"
-        android:icon="@drawable/ic_gamepad"
+        android:id="@+id/gameStats"
+        android:icon="@drawable/ic_videogame"
         android:title="@string/action_games" />
-
-    <item
-        android:id="@+id/action_more"
-        android:icon="@drawable/ic_more"
-        android:title="@string/action_more" />
 
 </menu>
