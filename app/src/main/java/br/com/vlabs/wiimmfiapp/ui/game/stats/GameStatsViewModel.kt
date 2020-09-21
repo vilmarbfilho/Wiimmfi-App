@@ -1,11 +1,11 @@
-package br.com.vlabs.wiimmfiapp.game.stats
+package br.com.vlabs.wiimmfiapp.ui.game.stats
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.vlabs.domain.repository.GameRepository
-import br.com.vlabs.wiimmfiapp.model.GameModel
-import br.com.vlabs.wiimmfiapp.model.mapper.toGameModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.GameModel
+import br.com.vlabs.wiimmfiapp.ui.game.mapper.toGameModel
 import br.com.vlabs.wiimmfiapp.router.GameRouter
 import kotlinx.coroutines.launch
 import java.io.IOException

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/gameStats"
-        android:name="br.com.vlabs.wiimmfiapp.game.stats.GameStatsFragment"
+        android:name="br.com.vlabs.wiimmfiapp.ui.game.stats.GameStatsFragment"
         android:label="@string/game_stat_fragment_label"
         tools:layout="@layout/fragment_game_stats">
 
@@ -18,13 +18,13 @@
 
     <activity
         android:id="@+id/GameDetailActivity"
-        android:name="br.com.vlabs.wiimmfiapp.game.detail.GameDetailActivity"
+        android:name="br.com.vlabs.wiimmfiapp.ui.game.detail.GameDetailActivity"
         android:label="GameDetailActivity"
         tools:layout="@layout/activity_game_detail">
 
         <argument
             android:name="gameModel"
-            app:argType="br.com.vlabs.wiimmfiapp.model.GameModel" />
+            app:argType="br.com.vlabs.wiimmfiapp.ui.game.model.GameModel" />
     </activity>
 
 </navigation>

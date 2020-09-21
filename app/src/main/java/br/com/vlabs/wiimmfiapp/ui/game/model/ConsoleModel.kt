@@ -1,4 +1,4 @@
-package br.com.vlabs.wiimmfiapp.model
+package br.com.vlabs.wiimmfiapp.ui.game.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

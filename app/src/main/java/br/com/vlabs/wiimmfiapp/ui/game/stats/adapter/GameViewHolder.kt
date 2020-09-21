@@ -1,10 +1,10 @@
-package br.com.vlabs.wiimmfiapp.game.stats.adapter
+package br.com.vlabs.wiimmfiapp.ui.game.stats.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vlabs.wiimmfiapp.R
-import br.com.vlabs.wiimmfiapp.model.GameModel
-import br.com.vlabs.wiimmfiapp.model.toImageResource
+import br.com.vlabs.wiimmfiapp.ui.game.model.GameModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.toImageResource
 import kotlinx.android.synthetic.main.item_game_stat.view.*
 
 class GameViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {

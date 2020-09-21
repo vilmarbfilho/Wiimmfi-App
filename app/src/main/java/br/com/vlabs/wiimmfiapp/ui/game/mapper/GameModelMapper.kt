@@ -1,8 +1,8 @@
-package br.com.vlabs.wiimmfiapp.model.mapper
+package br.com.vlabs.wiimmfiapp.ui.game.mapper
 
 import br.com.vlabs.domain.entity.Game
-import br.com.vlabs.wiimmfiapp.model.ConsoleModel
-import br.com.vlabs.wiimmfiapp.model.GameModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.ConsoleModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.GameModel
 
 fun Game.toGameModel() = GameModel(
     toConsoleModel(this.type),

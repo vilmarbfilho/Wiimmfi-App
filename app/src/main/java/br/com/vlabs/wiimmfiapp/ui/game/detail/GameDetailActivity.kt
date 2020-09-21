@@ -1,12 +1,12 @@
-package br.com.vlabs.wiimmfiapp.game.detail
+package br.com.vlabs.wiimmfiapp.ui.game.detail
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
 import br.com.vlabs.wiimmfiapp.R
-import br.com.vlabs.wiimmfiapp.game.detail.adapter.OnlineUserAdapter
-import br.com.vlabs.wiimmfiapp.model.toImageResource
+import br.com.vlabs.wiimmfiapp.ui.game.detail.adapter.OnlineUserAdapter
+import br.com.vlabs.wiimmfiapp.ui.game.model.toImageResource
 import kotlinx.android.synthetic.main.activity_game_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf

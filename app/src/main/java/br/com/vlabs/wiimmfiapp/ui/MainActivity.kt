@@ -1,9 +1,10 @@
-package br.com.vlabs.wiimmfiapp
+package br.com.vlabs.wiimmfiapp.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import br.com.vlabs.wiimmfiapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

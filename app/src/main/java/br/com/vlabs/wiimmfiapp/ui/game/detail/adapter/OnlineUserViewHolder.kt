@@ -1,8 +1,8 @@
-package br.com.vlabs.wiimmfiapp.game.detail.adapter
+package br.com.vlabs.wiimmfiapp.ui.game.detail.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import br.com.vlabs.wiimmfiapp.model.OnlineUserModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.OnlineUserModel
 import kotlinx.android.synthetic.main.item_online_user.view.*
 
 class OnlineUserViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {

@@ -1,4 +1,4 @@
-package br.com.vlabs.wiimmfiapp
+package br.com.vlabs.wiimmfiapp.ui
 
 import android.content.Intent
 import android.os.Bundle

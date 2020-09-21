@@ -1,4 +1,4 @@
-package br.com.vlabs.wiimmfiapp.game.stats
+package br.com.vlabs.wiimmfiapp.ui.game.stats
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import br.com.vlabs.wiimmfiapp.R
 import br.com.vlabs.wiimmfiapp.common.setToolbar
-import br.com.vlabs.wiimmfiapp.game.stats.adapter.GameStatsAdapter
+import br.com.vlabs.wiimmfiapp.ui.game.stats.adapter.GameStatsAdapter
 import kotlinx.android.synthetic.main.error_game_stat.*
 import kotlinx.android.synthetic.main.fragment_game_stats.*
 import kotlinx.android.synthetic.main.fragment_game_stats.pbLoading

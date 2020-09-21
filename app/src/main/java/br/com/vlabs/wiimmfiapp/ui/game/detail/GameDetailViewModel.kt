@@ -1,12 +1,11 @@
-package br.com.vlabs.wiimmfiapp.game.detail
+package br.com.vlabs.wiimmfiapp.ui.game.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.com.vlabs.domain.repository.GameRepository
-import br.com.vlabs.wiimmfiapp.model.OnlineUserModel
-import br.com.vlabs.wiimmfiapp.model.mapper.toGameModel
-import br.com.vlabs.wiimmfiapp.model.mapper.toOnlineUserModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.OnlineUserModel
+import br.com.vlabs.wiimmfiapp.ui.game.mapper.toOnlineUserModel
 import kotlinx.coroutines.launch
 import java.io.IOException
 

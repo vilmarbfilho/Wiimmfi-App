@@ -1,4 +1,4 @@
-package br.com.vlabs.wiimmfiapp.model
+package br.com.vlabs.wiimmfiapp.ui.game.model
 
 data class OnlineUserModel (
     val friendCode: String,

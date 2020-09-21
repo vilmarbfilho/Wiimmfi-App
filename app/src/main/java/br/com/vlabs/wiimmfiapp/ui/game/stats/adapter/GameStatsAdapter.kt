@@ -1,10 +1,10 @@
-package br.com.vlabs.wiimmfiapp.game.stats.adapter
+package br.com.vlabs.wiimmfiapp.ui.game.stats.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vlabs.wiimmfiapp.R
-import br.com.vlabs.wiimmfiapp.model.GameModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.GameModel
 
 class GameStatsAdapter(
     private val onClickItem: (GameModel) -> Unit

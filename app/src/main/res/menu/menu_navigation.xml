@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="br.com.vlabs.wiimmfiapp.MainActivity">
+    tools:context="br.com.vlabs.wiimmfiapp.ui.MainActivity">
 
     <item
         android:id="@+id/gameStats"

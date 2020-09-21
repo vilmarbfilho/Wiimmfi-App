@@ -1,10 +1,10 @@
-package br.com.vlabs.wiimmfiapp.game.detail.adapter
+package br.com.vlabs.wiimmfiapp.ui.game.detail.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.vlabs.wiimmfiapp.R
-import br.com.vlabs.wiimmfiapp.model.OnlineUserModel
+import br.com.vlabs.wiimmfiapp.ui.game.model.OnlineUserModel
 
 class OnlineUserAdapter: RecyclerView.Adapter<OnlineUserViewHolder>()  {
 
