@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="br.com.vlabs.wiimmfiapp.ui.MainActivity">
+
+    <item
+        android:id="@+id/gameContainerFlow"
+        android:icon="@drawable/ic_videogame"
+        android:title="@string/action_games" />
+
+    <item
+        android:id="@+id/moreContainerFlow"
+        android:icon="@drawable/ic_more"
+        android:title="@string/action_more" />
+
+</menu>
