@@ -7,6 +7,7 @@ import br.com.vlabs.wiimmfiapp.ui.game.detail.GameDetailActivityArgs
 import br.com.vlabs.wiimmfiapp.ui.game.detail.GameDetailViewModel
 import br.com.vlabs.wiimmfiapp.ui.game.stats.GameStatsViewModel
 import br.com.vlabs.wiimmfiapp.router.GameRouter
+import br.com.vlabs.wiimmfiapp.ui.more.MoreViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
@@ -25,6 +26,9 @@ val viewModelModule = module {
     }
     viewModel { (navController: NavController) ->
         GameStatsViewModel(get(), get { parametersOf(navController)})
+    }
+    viewModel {
+        MoreViewModel()
     }
 }
 

@@ -20,4 +20,6 @@
     <string name="game_over">Game Over</string>
     <string name="error_message_generic">Unable to load the information.</string>
 
+    <string name="donate_more_item">Donate</string>
+
 </resources>
