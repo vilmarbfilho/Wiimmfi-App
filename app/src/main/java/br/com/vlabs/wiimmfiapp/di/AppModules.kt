@@ -3,7 +3,7 @@ package br.com.vlabs.wiimmfiapp.di
 import androidx.navigation.NavController
 import br.com.vlabs.data.repository.WiimmfiRepository
 import br.com.vlabs.domain.repository.GameRepository
-import br.com.vlabs.wiimmfiapp.common.CustomTab
+import br.com.vlabs.wiimmfiapp.common.CustomTabHelper
 import br.com.vlabs.wiimmfiapp.ui.game.detail.GameDetailActivityArgs
 import br.com.vlabs.wiimmfiapp.ui.game.detail.GameDetailViewModel
 import br.com.vlabs.wiimmfiapp.ui.game.stats.GameStatsViewModel
@@ -16,7 +16,7 @@ import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
 
 val helpers = module {
-    factory { CustomTab(androidContext()) }
+    factory { CustomTabHelper(androidContext()) }
 }
 
 val repositoryModule = module {
@@ -35,7 +35,7 @@ val viewModelModule = module {
     viewModel { (navController: NavController) ->
         GameStatsViewModel(get(), get { parametersOf(navController)})
     }
-    viewModel {  (navController: NavController) ->
+    viewModel { (navController: NavController) ->
         MoreViewModel(get { parametersOf(navController)})
     }
 }
