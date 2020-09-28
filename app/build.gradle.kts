@@ -64,6 +64,8 @@ dependencies {
     implementation(Libs.lifecycleViewModel)
     implementation(Libs.lifecycleLivedataKtx)
 
+    implementation(Libs.customTabs)
+
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.koinTest)
 

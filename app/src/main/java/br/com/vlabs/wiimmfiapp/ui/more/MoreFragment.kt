@@ -17,8 +17,7 @@ class MoreFragment : Fragment() {
 
     private val navController by lazy { findNavController() }
 
-    //private val viewModel: MoreViewModel by viewModel { parametersOf(navController) }
-    private val viewModel: MoreViewModel by viewModel()
+    private val viewModel: MoreViewModel by viewModel { parametersOf(navController) }
 
     private val moreAdapter = MoreAdapter {
         viewModel.onMoreItemClicked(it)

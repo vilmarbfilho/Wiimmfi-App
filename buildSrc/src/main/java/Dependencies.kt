@@ -33,6 +33,8 @@ object Libs {
     const val koinScope = "org.koin:koin-androidx-scope:${Versions.koin_version}"
     const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin_version}"
     const val koinFragment = "org.koin:koin-androidx-fragment:${Versions.koin_version}" //Fragment Factory (unstable version)
+
+    const val customTabs = "com.android.support:customtabs:23.3.0"
 }
 
 object TestLibs {
