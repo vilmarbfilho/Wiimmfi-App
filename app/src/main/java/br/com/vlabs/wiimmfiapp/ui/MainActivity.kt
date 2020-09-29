@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         setupNavigation()
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        throw RuntimeException("Test Crash Bitrise!!")
+    }
+
     private fun setupNavigation() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         NavigationUI.setupWithNavController(bottomNavigation, navHostFragment.navController)
