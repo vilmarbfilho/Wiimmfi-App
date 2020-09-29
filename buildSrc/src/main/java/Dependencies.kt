@@ -6,6 +6,8 @@ object Versions {
     const val koin_version = "2.1.6"
     const val lifecycle_version = "2.2.0"
     const val nav_version = "2.3.0"
+    const val google_services = "4.3.3"
+    const val firebase_crashlytics = "2.3.0"
 }
 
 object Libs {
@@ -35,6 +37,9 @@ object Libs {
     const val koinFragment = "org.koin:koin-androidx-fragment:${Versions.koin_version}" //Fragment Factory (unstable version)
 
     const val customTabs = "com.android.support:customtabs:23.3.0"
+
+    const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx:17.5.0"
+    const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx:17.2.1"
 }
 
 object TestLibs {
