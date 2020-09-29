@@ -3,6 +3,8 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -65,6 +67,9 @@ dependencies {
     implementation(Libs.lifecycleLivedataKtx)
 
     implementation(Libs.customTabs)
+
+    implementation(Libs.firebaseAnalytics)
+    implementation(Libs.firebaseCrashlytics)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.koinTest)
