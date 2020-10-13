@@ -40,6 +40,7 @@ object Libs {
 
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx:17.5.0"
     const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx:17.2.1"
+    const val firebaseRemoteConfig = "com.google.firebase:firebase-config-ktx:19.2.0"
 }
 
 object TestLibs {

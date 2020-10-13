@@ -70,6 +70,7 @@ dependencies {
 
     implementation(Libs.firebaseAnalytics)
     implementation(Libs.firebaseCrashlytics)
+    implementation(Libs.firebaseRemoteConfig)
 
     testImplementation(TestLibs.junit)
     testImplementation(TestLibs.koinTest)
