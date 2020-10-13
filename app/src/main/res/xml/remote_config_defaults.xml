@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>online_users_query</key>
+        <value>table#online tbody tr</value>
+    </entry>
+    <entry>
+        <key>game_stats_query</key>
+        <value>table#game tbody tr</value>
+    </entry>
+</defaultsMap>
