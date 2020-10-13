@@ -22,15 +22,14 @@ import br.com.vlabs.data.GameConstants.ONLINE_USER_STATUS_INDEX
 import br.com.vlabs.data.GameConstants.ONLINE_USER_SUSPEND_INDEX
 import br.com.vlabs.data.models.GameScraped
 import br.com.vlabs.data.models.OnlineUserScraped
-import br.com.vlabs.data.scrap.WiimmfiPages.URL_BASE_SITE
-import br.com.vlabs.data.scrap.WiimmfiPages.PATH_GAME_STATS
+import br.com.vlabs.data.remoteconfig.AppRemoteConfig
 import org.jsoup.Jsoup
 
-object WiimmfiScraper {
+class WiimmfiScraper(private val remoteConfig: AppRemoteConfig) {
 
     fun getGameStats(): List<GameScraped> {
-        val html = Jsoup.connect(URL_BASE_SITE + PATH_GAME_STATS).get()
-        val tableItems = html.select("table#game tbody tr")
+        val html = Jsoup.connect(remoteConfig.getGameStatsPage()).get()
+        val tableItems = html.select(remoteConfig.getGameStatsQuery())
 
         val gamesList = tableItems.filterIndexed { index, _ ->
             index > HEADER_TABLE_INDEX
@@ -53,8 +52,8 @@ object WiimmfiScraper {
     }
 
     fun getOnlineUsers(id: String): List<OnlineUserScraped> {
-        val html = Jsoup.connect("$URL_BASE_SITE$PATH_GAME_STATS/$id").get()
-        val tableItems = html.select("table#online tbody tr")
+        val html = Jsoup.connect("${remoteConfig.getOnLineUsersPage()}/$id").get()
+        val tableItems = html.select(remoteConfig.getOnLineUsersQuery())
 
         val onlineUsersList = tableItems.filterIndexed { index, _ ->
             index > HEADER_TABLE_INDEX
