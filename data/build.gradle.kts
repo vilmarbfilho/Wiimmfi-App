@@ -32,6 +32,8 @@ dependencies {
     implementation(Libs.kotlin)
     implementation(Libs.coreKtx)
     implementation(Libs.jsoup)
+    implementation(Libs.firebaseCrashlytics)
+    implementation(Libs.firebaseRemoteConfig)
 
     testImplementation(TestLibs.junit)
 

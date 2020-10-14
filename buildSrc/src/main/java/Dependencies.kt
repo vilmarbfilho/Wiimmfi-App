@@ -1,6 +1,6 @@
 object Versions {
     const val appcompat = "1.2.0"
-    const val gradle = "4.0.1"
+    const val gradle = "4.1.0"
     const val junit = "4.12"
     const val kotlin = "1.4.0"
     const val koin_version = "2.1.6"
@@ -40,6 +40,7 @@ object Libs {
 
     const val firebaseAnalytics = "com.google.firebase:firebase-analytics-ktx:17.5.0"
     const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics-ktx:17.2.1"
+    const val firebaseRemoteConfig = "com.google.firebase:firebase-config-ktx:19.2.0"
 }
 
 object TestLibs {
