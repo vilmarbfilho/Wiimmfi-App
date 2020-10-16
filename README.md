@@ -19,6 +19,17 @@ More info:
 
 [Wiki](http://wiiki.wii-homebrew.com/Wiimmfi_%28en%29)
 
+Screenshots
+-----------
+![](images/game_stats.png)
+See stats of all games available.
+
+![](images/game_detail.png)
+See online users.
+
+![](images/more.png)
+And other information about Wiimmfi Project.
+
 License
 --------
 
