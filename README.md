@@ -22,12 +22,15 @@ More info:
 Screenshots
 -----------
 ![](images/game_stats.png)
+
 See stats of all games available.
 
 ![](images/game_detail.png)
+
 See online users.
 
 ![](images/more.png)
+
 And other information about Wiimmfi Project.
 
 License
