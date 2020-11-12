@@ -16,6 +16,10 @@ buildscript {
     }
 }
 
+plugins {
+    id("io.gitlab.arturbosch.detekt").version("1.14.2")
+}
+
 allprojects {
     repositories {
         google()

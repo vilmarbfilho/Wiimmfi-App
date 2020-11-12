@@ -7,6 +7,8 @@ plugins {
     id("com.google.firebase.crashlytics")
 }
 
+apply(from = "$rootDir/config/detekt/detekt.gradle")
+
 android {
     compileSdkVersion(AppConfig.compileSdk)
 
