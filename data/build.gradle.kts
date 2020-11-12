@@ -3,6 +3,8 @@ plugins {
     kotlin("android")
 }
 
+apply(from = "$rootDir/config/detekt/detekt.gradle")
+
 android {
     compileSdkVersion(AppConfig.compileSdk)
 
