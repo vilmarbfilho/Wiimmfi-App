@@ -11,5 +11,11 @@ detekt {
             enabled = true
             destination = file("$buildDir/reports/detekt.html")
         }
+        xml {
+            enabled = false
+        }
+        txt {
+            enabled = false
+        }
     }
 }
