@@ -4,11 +4,13 @@ import br.com.vlabs.data.R
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 
+private const val INTERVAL_DEFAULT = 3600L
+
 class AppRemoteConfig(private val remoteConfig: FirebaseRemoteConfig) {
 
     init {
         val configSettings = remoteConfigSettings {
-            minimumFetchIntervalInSeconds = 3600
+            minimumFetchIntervalInSeconds = INTERVAL_DEFAULT
         }
 
         remoteConfig.setConfigSettingsAsync(configSettings)
