@@ -1,6 +1,6 @@
 object Versions {
     const val appcompat = "1.2.0"
-    const val gradle = "4.1.0"
+    const val gradle = "4.1.1"
     const val junit = "4.12"
     const val kotlin = "1.4.0"
     const val koin_version = "2.1.6"
