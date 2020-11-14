@@ -6,6 +6,16 @@ import androidx.viewbinding.ViewBinding
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
+/**
+ * References
+ *
+ * https://medium.com/easyread/how-to-simplify-your-android-view-binding-delegation-d07812b2a616
+ *
+ * https://github.com/yogacp/android-viewbinding
+ *
+ * https://jamie.sanson.dev/blog/handing-the-reins-to-kotlin-delegates-part-1-what-and-why/
+ */
+
 inline fun <reified T : ViewBinding> Activity.viewBinding() = ActivityViewBindingDelegate(T::class.java)
 
 class ActivityViewBindingDelegate<T : ViewBinding>(private val bindingClass: Class<T>) :

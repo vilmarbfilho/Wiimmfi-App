@@ -71,6 +71,7 @@ dependencies {
 
     implementation(Libs.lifecycleViewModel)
     implementation(Libs.lifecycleLivedataKtx)
+    implementation(Libs.lifecycleCommonJava8)
 
     implementation(Libs.customTabs)
 
