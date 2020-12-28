@@ -5,13 +5,16 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
 import br.com.vlabs.wiimmfiapp.R
+import br.com.vlabs.wiimmfiapp.common.viewbinding.viewBinding
+import br.com.vlabs.wiimmfiapp.databinding.ActivityGameDetailBinding
 import br.com.vlabs.wiimmfiapp.ui.game.detail.adapter.OnlineUserAdapter
 import br.com.vlabs.wiimmfiapp.ui.game.model.toImageResource
-import kotlinx.android.synthetic.main.activity_game_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
 class GameDetailActivity : AppCompatActivity() {
+
+    private val binding: ActivityGameDetailBinding by viewBinding()
 
     private val args: GameDetailActivityArgs by navArgs()
 
@@ -21,8 +24,6 @@ class GameDetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        setContentView(R.layout.activity_game_detail)
 
         setupToolbar()
 
@@ -34,7 +35,7 @@ class GameDetailActivity : AppCompatActivity() {
     }
 
     private fun setupToolbar() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
 
         supportActionBar?.let { actionBar ->
             actionBar.setDisplayHomeAsUpEnabled(true)
@@ -42,13 +43,13 @@ class GameDetailActivity : AppCompatActivity() {
             actionBar.setDisplayShowTitleEnabled(false)
         }
 
-        toolbar.setNavigationOnClickListener {
+        binding.toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
     }
 
     private fun setupRecyclerView() {
-        with(rvOnlineUsers) {
+        with(binding.rvOnlineUsers) {
             setHasFixedSize(true)
             adapter = onlineUserAdapter
         }
@@ -56,7 +57,7 @@ class GameDetailActivity : AppCompatActivity() {
 
     private fun observeLiveData() {
         viewModel.loading.observe(this, { show ->
-            pbLoading.visibility = if (show) {
+            binding.pbLoading.visibility = if (show) {
                 View.VISIBLE
             } else {
                 View.GONE
@@ -64,29 +65,29 @@ class GameDetailActivity : AppCompatActivity() {
         })
 
         viewModel.gameConsole.observe(this, {
-            tvGameConsole.text = getString(R.string.console_label, it.name)
-            ivGameType.setImageResource(it.toImageResource())
+            binding.tvGameConsole.text = getString(R.string.console_label, it.name)
+            binding.ivGameType.setImageResource(it.toImageResource())
         })
 
         viewModel.gameName.observe(this, {
-            tvGameName.text = it
+            binding.tvGameName.text = it
         })
 
         viewModel.gameRemark.observe(this, {
             if (it.isEmpty()) {
-                tvGameRemark.visibility = View.GONE
+                binding.tvGameRemark.visibility = View.GONE
             } else {
-                tvGameRemark.text = it
-                tvGameRemark.visibility = View.VISIBLE
+                binding.tvGameRemark.text = it
+                binding.tvGameRemark.visibility = View.VISIBLE
             }
         })
 
         viewModel.gameVariants.observe(this, {
-            tvGameVariants.text = getString(R.string.variants_label, it)
+            binding.tvGameVariants.text = getString(R.string.variants_label, it)
         })
 
         viewModel.gameOnline.observe(this, {
-            tvGameOnline.text = getString(R.string.online_label, it)
+            binding.tvGameOnline.text = getString(R.string.online_label, it)
         })
 
         viewModel.onlineUsers.observe(this, {
