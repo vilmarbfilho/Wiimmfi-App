@@ -22,13 +22,16 @@ import br.com.vlabs.data.GameConstants.ONLINE_USER_STATUS_INDEX
 import br.com.vlabs.data.GameConstants.ONLINE_USER_SUSPEND_INDEX
 import br.com.vlabs.data.models.GameScraped
 import br.com.vlabs.data.models.OnlineUserScraped
+import br.com.vlabs.data.parser.JsoupParser
 import br.com.vlabs.data.remoteconfig.AppRemoteConfig
-import org.jsoup.Jsoup
 
-class WiimmfiScraper(private val remoteConfig: AppRemoteConfig) {
+class WiimmfiScraper(
+    private val remoteConfig: AppRemoteConfig,
+    private val parser: JsoupParser
+) {
 
     fun getGameStats(): List<GameScraped> {
-        val html = Jsoup.connect(remoteConfig.getGameStatsPage()).get()
+        val html = parser.get(remoteConfig.getGameStatsPage())
         val tableItems = html.select(remoteConfig.getGameStatsQuery())
 
         val gamesList = tableItems.filterIndexed { index, _ ->
@@ -52,7 +55,7 @@ class WiimmfiScraper(private val remoteConfig: AppRemoteConfig) {
     }
 
     fun getOnlineUsers(id: String): List<OnlineUserScraped> {
-        val html = Jsoup.connect("${remoteConfig.getOnLineUsersPage()}/$id").get()
+        val html = parser.get("${remoteConfig.getOnLineUsersPage()}/$id")
         val tableItems = html.select(remoteConfig.getOnLineUsersQuery())
 
         val onlineUsersList = tableItems.filterIndexed { index, _ ->
