@@ -1,10 +1,15 @@
 package br.com.vlabs.wiimmfiapp.di
 
+import android.os.Build
 import androidx.navigation.NavController
+import br.com.vlabs.data.helper.DeviceHelper
+import br.com.vlabs.data.parser.ConfigParser
+import br.com.vlabs.data.parser.JsoupParser
 import br.com.vlabs.data.remoteconfig.AppRemoteConfig
 import br.com.vlabs.data.repository.WiimmfiRepository
 import br.com.vlabs.data.scrap.WiimmfiScraper
 import br.com.vlabs.domain.repository.GameRepository
+import br.com.vlabs.wiimmfiapp.BuildConfig
 import br.com.vlabs.wiimmfiapp.common.CustomTabHelper
 import br.com.vlabs.wiimmfiapp.ui.game.detail.GameDetailActivityArgs
 import br.com.vlabs.wiimmfiapp.ui.game.detail.GameDetailViewModel
@@ -18,12 +23,24 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
 
+val configParser = module {
+   single {
+       ConfigParser(
+           versionApp = BuildConfig.VERSION_NAME,
+           versionOS = Build.VERSION.SDK_INT,
+           deviceName = get<DeviceHelper>().getDeviceName()
+       )
+   }
+}
+
 val fabricModule = module {
     single { FirebaseRemoteConfig.getInstance() }
 }
 
 val helpers = module {
     factory { CustomTabHelper(androidContext()) }
+    single { JsoupParser(get()) }
+    single { DeviceHelper() }
 }
 
 val repositoryModule = module {
@@ -40,7 +57,7 @@ val routerModule = module {
 }
 
 val scraperModule = module {
-    single { WiimmfiScraper(get()) }
+    single { WiimmfiScraper(get(), get()) }
 }
 
 val viewModelModule = module {
@@ -56,6 +73,7 @@ val viewModelModule = module {
 }
 
 val appModules = listOf(
+    configParser,
     fabricModule,
     helpers,
     repositoryModule,
