@@ -1,7 +1,6 @@
-# Wiimmfi App | Android
-<img src="https://app.bitrise.io/app/8b3c796e5a7698d5/status.svg?token=Jr8pIY4zIfzcSlSc4qpglA&branch=master">
+# Wiimmfi App
 
-An android app that use the Wiimmfi-Project info. This project is not maintained by Wiimmfi-Project staff.
+An app that use the Wiimmfi-Project info. This project is not maintained by Wiimmfi-Project staff.
 
 ### What is Wiimmfi-Project
 
@@ -33,10 +32,14 @@ See online users.
 
 And other information about Wiimmfi Project.
 
+Version
+--------
+This project started as a android app. It's code is on the `android` branch.
+
 License
 --------
 
-    Copyright 2020 Vilmar Bispo Filho
+    Copyright 2023 Vilmar Bispo Filho
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
